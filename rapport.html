@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Åpenhetsloven Rapport - AH Gruppen</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="assets/AHLOGO.png" type="image/png" />
+    <script src="app.js" defer></script>
+    <script src="rapport.js" defer></script>
+  </head>
+  <body>
+    <header class="navbar solid-effect">
+      <a href="index.html" class="logo" style="text-decoration: none">
+        <span class="logo-circle">
+          <span class="logo-a">A</span>
+          <span class="logo-h">H</span>
+        </span>
+        <span class="logo-text">AH gruppen</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#home" class="nav-item">Forside</a>
+        <a href="index.html#om-oss" class="nav-item">Om oss</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <div class="pdf-viewer-container">
+      <div class="pdf-sidebar">
+        <h2>Snarveier i rapporten</h2>
+        <ul class="pdf-shortcuts">
+          <li><button data-page="2" class="active">Forside</button></li>
+          <li><button data-page="3">Om oss og organisering</button></li>
+          <li><button data-page="5">Arbeid med Åpenhetsloven</button></li>
+          <li><button data-page="8">Intern aktsomhetsvurdering</button></li>
+          <li><button data-page="12">Vurdering av leverandører</button></li>
+          <li><button data-page="15">Oppsummering</button></li>
+        </ul>
+      </div>
+      <div class="pdf-content">
+        <iframe id="pdf-frame" class="pdf-frame" src="260528%20AH%20Gruppen%20AS%20-%20Redegj%C3%B8relse%20for%20%C3%85penhetsloven%202025.pdf#page=2&toolbar=0&navpanes=0&scrollbar=0"></iframe>
+      </div>
+    </div>
+  </body>
+</html>
