@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" href="assets/AHLOGO.png" type="image/png" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
     <script src="app.js" defer></script>
     <script src="rapport.js" defer></script>
   </head>
@@ -44,7 +45,34 @@
         </ul>
       </div>
       <div class="pdf-content">
-        <iframe id="pdf-frame" class="pdf-frame" src="260528%20AH%20Gruppen%20AS%20-%20Redegj%C3%B8relse%20for%20%C3%85penhetsloven%202025.pdf#page=2&toolbar=0&navpanes=0&scrollbar=0"></iframe>
+        <!-- Modern custom PDF viewer -->
+        <div class="pdf-viewer-wrapper" id="pdf-viewer-wrapper">
+          <div class="pdf-toolbar">
+            <div class="pdf-toolbar-left">
+              <button id="prev-page" class="pdf-nav-btn" disabled>&larr; Forrige</button>
+              <span id="page-num-display" class="page-indicator">Laster side...</span>
+              <button id="next-page" class="pdf-nav-btn" disabled>Neste &rarr;</button>
+            </div>
+            <div class="pdf-toolbar-center">
+              <button id="zoom-out" class="pdf-zoom-btn" title="Zoom ut">&minus;</button>
+              <span id="zoom-percent" class="zoom-indicator">100%</span>
+              <button id="zoom-in" class="pdf-zoom-btn" title="Zoom inn">&#43;</button>
+            </div>
+            <div class="pdf-toolbar-right">
+              <a href="260528%20AH%20Gruppen%20AS%20-%20Redegj%C3%B8relse%20for%20%C3%85penhetsloven%202025.pdf" class="pdf-download-link" download>Last ned PDF</a>
+            </div>
+          </div>
+          <div class="pdf-canvas-container" id="pdf-canvas-container">
+            <!-- Initial full-document loader, hidden when pages start rendering -->
+            <div id="pdf-loader" class="pdf-loader">
+              <div class="spinner"></div>
+              <p>Laster rapport...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fallback iframe for offline / file:/// protocol use -->
+        <iframe id="pdf-frame-fallback" class="pdf-frame fallback-hidden" src="260528%20AH%20Gruppen%20AS%20-%20Redegj%C3%B8relse%20for%20%C3%85penhetsloven%202025.pdf#page=2&toolbar=0&navpanes=0&scrollbar=0"></iframe>
       </div>
     </div>
   </body>
